@@ -1,0 +1,27 @@
+{
+  "name": "playwright_fundamentals_10feb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Prog1.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "install:browsers": "playwright install chromium"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chandrashekharbangar18/Playwright_Fundamentals_10Feb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/chandrashekharbangar18/Playwright_Fundamentals_10Feb/issues"
+  },
+  "homepage": "https://github.com/chandrashekharbangar18/Playwright_Fundamentals_10Feb#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.2"
+  }
+}
