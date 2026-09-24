@@ -12,6 +12,25 @@ The project is built with:
 
 The test files are organized under the `tests` directory, with examples grouped by topic.
 
+## Browser Context and Page Exercises
+
+The `tests/02_First_Test` examples cover browser lifecycle concepts:
+
+- Creating and closing browser contexts.
+- Opening multiple pages (tabs) in the same context.
+- Sharing session state between pages in one context.
+- Configuring and reusing browser contexts.
+
+`212_Practice_Que_2.spec.ts` demonstrates creating one context, opening two
+pages in that context, and navigating both pages to Playwright's website. Pages
+created from the same context share the context's cookies and storage state.
+
+Run this exercise directly with:
+
+```bash
+npx playwright test tests/02_First_Test/212_Practice_Que_2.spec.ts
+```
+
 ## Prerequisites
 
 Before running the tests, make sure you have the following installed:
@@ -54,6 +73,8 @@ npm run test:ui
 ├── tests/
 │   └── 01_Basics/
 │       └── Lab_202_Test_Annotations.spec.ts
+│   └── 02_First_Test/
+│       └── 212_Practice_Que_2.spec.ts
 ├── playwright.config.ts
 ├── package.json
 ├── tsconfig.json
