@@ -45,6 +45,14 @@ The `tests/03_Locators_Commands` examples demonstrate:
 verifies the page title, clicks **Make Appointment**, fills the login form, and
 asserts that the appointment page is displayed.
 
+The workflow is:
+
+1. Navigate to the CURA demo application.
+2. Verify the title is `CURA Healthcare Service`.
+3. Select **Make Appointment**.
+4. Sign in with the demo credentials `John Doe` and `ThisIsNotAPassword`.
+5. Verify that the **Make Appointment** section is visible.
+
 Run the CURA exercise directly with:
 
 ```bash
