@@ -71,9 +71,18 @@ npm run test:ui
 ```text
 .
 ├── tests/
-│   └── 01_Basics/
-│       └── Lab_202_Test_Annotations.spec.ts
+│   ├── 01_Basics/
+│   │   └── Lab_202_Test_Annotations.spec.ts
 │   └── 02_First_Test/
+│       ├── 203_First_Running_Test.spec.ts
+│       ├── 204_Browser_Context_Pages.spec.ts
+│       ├── 205_Multiple_Context.spec.ts
+│       ├── 206_Multiple_Pages.spec.ts
+│       ├── 207_Test_PW.spec.ts
+│       ├── 208_Manual_Context.spec.ts
+│       ├── 209_Manual_Context_Options.spec.ts
+│       ├── 210_Context_Reuse.spec.ts
+│       ├── 211_Practice_Que_1.spec.ts
 │       └── 212_Practice_Que_2.spec.ts
 ├── playwright.config.ts
 ├── package.json
