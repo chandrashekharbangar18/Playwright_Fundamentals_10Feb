@@ -31,6 +31,26 @@ Run this exercise directly with:
 npx playwright test tests/02_First_Test/212_Practice_Que_2.spec.ts
 ```
 
+## Locators and Navigation Commands
+
+The `tests/03_Locators_Commands` examples demonstrate:
+
+- Using `page.goto()` with different `waitUntil` options.
+- Navigating with a custom HTTP referer.
+- Configuring referer headers for an entire browser context.
+- Locating elements with CSS selectors.
+- Automating login and appointment flows in the VWO and CURA demo applications.
+
+`217_Automate_CURA_Project.spec.ts` opens the CURA Healthcare Service demo,
+verifies the page title, clicks **Make Appointment**, fills the login form, and
+asserts that the appointment page is displayed.
+
+Run the CURA exercise directly with:
+
+```bash
+npx playwright test tests/03_Locators_Commands/217_Automate_CURA_Project.spec.ts
+```
+
 ## Prerequisites
 
 Before running the tests, make sure you have the following installed:
@@ -84,6 +104,12 @@ npm run test:ui
 │       ├── 210_Context_Reuse.spec.ts
 │       ├── 211_Practice_Que_1.spec.ts
 │       └── 212_Practice_Que_2.spec.ts
+│   └── 03_Locators_Commands/
+│       ├── 213_Commands.spec.ts
+│       ├── 214_Goto_Commands.spec.ts
+│       ├── 215_Referer_Commands.spec.ts
+│       ├── 216_Automate_VWO_Project.spec.ts
+│       └── 217_Automate_CURA_Project.spec.ts
 ├── playwright.config.ts
 ├── package.json
 ├── tsconfig.json
