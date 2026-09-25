@@ -59,6 +59,21 @@ Run the CURA exercise directly with:
 npx playwright test tests/03_Locators_Commands/217_Automate_CURA_Project.spec.ts
 ```
 
+`219_GetByRole_1.spec.ts` and `220_GetByRole_2.spec.ts` focus on Playwright's
+`getByRole()` locator strategy. These tests target login forms by accessible role
+and name, and use `exact: true` to avoid ambiguous matches when multiple buttons
+share similar names.
+
+`220_GetByRole_2.spec.ts` automates the App.vwo login page by entering invalid
+credentials, clicking **Sign in**, and asserting the error notification message is
+shown.
+
+Run the App.vwo getByRole exercise directly with:
+
+```bash
+npx playwright test tests/03_Locators_Commands/220_GetByRole_2.spec.ts
+```
+
 ## Prerequisites
 
 Before running the tests, make sure you have the following installed:
@@ -117,7 +132,10 @@ npm run test:ui
 │       ├── 214_Goto_Commands.spec.ts
 │       ├── 215_Referer_Commands.spec.ts
 │       ├── 216_Automate_VWO_Project.spec.ts
-│       └── 217_Automate_CURA_Project.spec.ts
+│       ├── 217_Automate_CURA_Project.spec.ts
+│       ├── 218_Xpath.spec.ts
+│       ├── 219_GetByRole_1.spec.ts
+│       └── 220_GetByRole_2.spec.ts
 ├── playwright.config.ts
 ├── package.json
 ├── tsconfig.json
