@@ -8,9 +8,9 @@ test.skip('skipped test', async ({ page }) => {
 });
 
 // Only run this test
-test.only('focused test', async ({ page }) => {
-  // Only this test runs
-});
+// test.only('focused test', async ({ page }) => {
+//   // Only this test runs
+// });
 
 // Mark as failing
 test.fail('expected to fail', async ({ page }) => {
@@ -18,9 +18,9 @@ test.fail('expected to fail', async ({ page }) => {
 });
 
 // Slow test (3x timeout)
-test.slow('slow test', async ({ page }) => {
-  // Has extended timeout
-});
+// test.slow('slow test', async ({ page }) => {
+//   // Has extended timeout
+// });
 
 // Conditional skip
 test('conditional', async ({ page, browserName }) => {
