@@ -1,26 +1,26 @@
 import { chromium, Browser, BrowserContext, Page } from 'playwright';
 
 async function run() {
-    // LEVEL 1: Launch browser — heaviest operation, do it once
-    let browser: Browser = await chromium.launch({ headless: false });
-    console.log("Browser Launched", browser);
+  const browser: Browser = await chromium.launch({
+    headless: process.env.CI !== 'true',
+  });
 
-    // LEVEL 2: Create context — fresh session, isolated cookies
-    let context: BrowserContext = await browser.newContext();
-    console.log("Context created", context);
+  console.log('Browser launched');
 
-    // LEVEL 3: Open page — a tab inside the context
-    let page: Page = await context.newPage();
-    console.log("Page opened");
+  const context: BrowserContext = await browser.newContext();
+  console.log('Context created');
 
-    await page.goto("https://example.com");
-    console.log("Title:", await page.title());
+  const page: Page = await context.newPage();
+  console.log('Page opened');
 
-    // Cleanup — reverse order
+  try {
+    await page.goto('https://example.com');
+    console.log('Title:', await page.title());
+  } finally {
     await page.close();
     await context.close();
     await browser.close();
-
+  }
 }
 
 run();
