@@ -1,16 +1,16 @@
 # Playwright Fundamentals
 
-This repository contains a set of Playwright learning exercises and small test examples covering core concepts such as test annotations, selectors, browser automation, and test execution patterns.
+This repository contains Playwright learning exercises and end-to-end examples covering test annotations, browser contexts, selectors, browser automation, session storage, and test reporting.
 
 ## Project Overview
 
-The project is built with:
+The project uses:
 
-- Playwright
-- TypeScript
-- Node.js
+- Node.js and TypeScript
+- Playwright Test
+- Allure Playwright for test results
 
-The test files are organized under the `tests` directory, with examples grouped by topic.
+Tests are organized by topic under the `tests` directory. The configured Playwright project runs against installed Google Chrome.
 
 ## Browser Context and Page Exercises
 
@@ -74,6 +74,19 @@ Run the App.vwo getByRole exercise directly with:
 npx playwright test tests/03_Locators_Commands/220_GetByRole_2.spec.ts
 ```
 
+## Web Table Exercises
+
+The `tests/06_WebTables` examples practice locating table rows and cells with
+XPath and Playwright locators, and extracting row data from a web table with a
+dynamic row count. `232_Webtable_Dynamic.spec.ts` reads the table rows from
+AwesomeQA and logs each data row as an array of cell values.
+
+Run the dynamic web-table exercise with:
+
+```bash
+npx playwright test tests/06_WebTables/232_Webtable_Dynamic.spec.ts
+```
+
 ## Prerequisites
 
 Before running the tests, make sure you have the following installed:
@@ -83,17 +96,15 @@ Before running the tests, make sure you have the following installed:
 
 ## Setup
 
-Install dependencies:
+Install dependencies and the Playwright browser binaries:
 
 ```bash
 npm install
+npm run install:browsers
 ```
 
-Install the Chromium browser used by Playwright:
-
-```bash
-npx playwright install chromium
-```
+The configured project uses the installed Google Chrome channel. Install Google
+Chrome if it is not already available on your machine.
 
 ## Run Tests
 
@@ -109,6 +120,54 @@ Run tests in UI mode:
 npm run test:ui
 ```
 
+The configuration writes Playwright HTML output and Allure result files. After
+a test run, open the Playwright report with:
+
+```bash
+npx playwright show-report
+```
+
+Generate and open an Allure report from the collected results:
+
+```bash
+npx allure generate allure-results --clean
+npx allure open allure-report
+```
+
+The Allure command line requires Java. Test runs create `allure-results/`;
+generated reports are local artifacts and should not be committed.
+
+## Session Storage Examples
+
+`224_Session_Storage.spec.ts` signs in to the VWO application and saves the
+authenticated browser state to `user-session.json`. Provide credentials through
+environment variables rather than hard-coding them:
+
+PowerShell:
+
+```powershell
+$env:VWO_USERNAME = "your-vwo-username"
+$env:VWO_PASSWORD = "your-vwo-password"
+npx playwright test tests/03_Locators_Commands/224_Session_Storage.spec.ts
+```
+
+Bash:
+
+```bash
+VWO_USERNAME="your-vwo-username" VWO_PASSWORD="your-vwo-password" \
+  npx playwright test tests/03_Locators_Commands/224_Session_Storage.spec.ts
+```
+
+The generated session file is ignored by Git. `226_Test_VWO.spec.ts` demonstrates
+using that saved state to open authenticated VWO pages; run the session-storage
+test first to create the file.
+
+## Project Practice
+
+`tests/Project_Practice/228_Practice_Bank_App.spec.ts` exercises a ParaBank
+workflow including registration, transferring funds, and viewing account
+details.
+
 ## Project Structure
 
 ```text
@@ -116,7 +175,7 @@ npm run test:ui
 ├── tests/
 │   ├── 01_Basics/
 │   │   └── Lab_202_Test_Annotations.spec.ts
-│   └── 02_First_Test/
+│   ├── 02_First_Test/
 │       ├── 203_First_Running_Test.spec.ts
 │       ├── 204_Browser_Context_Pages.spec.ts
 │       ├── 205_Multiple_Context.spec.ts
@@ -127,20 +186,27 @@ npm run test:ui
 │       ├── 210_Context_Reuse.spec.ts
 │       ├── 211_Practice_Que_1.spec.ts
 │       └── 212_Practice_Que_2.spec.ts
-│   └── 03_Locators_Commands/
-│       ├── 213_Commands.spec.ts
-│       ├── 214_Goto_Commands.spec.ts
-│       ├── 215_Referer_Commands.spec.ts
-│       ├── 216_Automate_VWO_Project.spec.ts
-│       ├── 217_Automate_CURA_Project.spec.ts
-│       ├── 218_Xpath.spec.ts
-│       ├── 219_GetByRole_1.spec.ts
-│       └── 220_GetByRole_2.spec.ts
+│   ├── 03_Locators_Commands/
+│   │   ├── 213_Commands.spec.ts
+│   │   ├── 214_Goto_Commands.spec.ts
+│   │   ├── 215_Referer_Commands.spec.ts
+│   │   ├── 216_Automate_VWO_Project.spec.ts
+│   │   ├── 217_Automate_CURA_Project.spec.ts
+│   │   ├── 218_Xpath.spec.ts
+│   │   ├── 219_GetByRole_1.spec.ts
+│   │   ├── 220_GetByRole_2.spec.ts
+│   │   ├── 224_Session_Storage.spec.ts
+│   │   └── 226_Test_VWO.spec.ts
+│   ├── 04_Allure_Reporting/
+│   │   └── 227_LoginTest.spec.ts
+│   └── Project_Practice/
+│       └── 228_Practice_Bank_App.spec.ts
+├── CustomTTAReporter.ts
 ├── playwright.config.ts
 ├── package.json
 ├── tsconfig.json
 ├── README.md
-└── node_modules/
+└── allure-results/ (generated)
 ```
 
 ## Notes
