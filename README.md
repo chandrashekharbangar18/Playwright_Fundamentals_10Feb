@@ -87,6 +87,42 @@ Run the dynamic web-table exercise with:
 npx playwright test tests/06_WebTables/232_Webtable_Dynamic.spec.ts
 ```
 
+`233_WebTable_Emp_Mgmt.spec.ts` locates the employee table and selects the
+checkbox for the `Rohan.Mehta` row using a row-scoped locator.
+
+Run the employee-management exercise with:
+
+```bash
+npx playwright test tests/06_WebTables/233_WebTable_Emp_Mgmt.spec.ts
+```
+
+`234_WebTable_Emp_Search.spec.ts` searches the employee table for `Kabir`,
+selects the `Kabir.Khan` checkbox, and verifies that the selected employee is
+shown in the output.
+
+Run the employee-search exercise with:
+
+```bash
+npx playwright test tests/Project_Practice/234_WebTable_Emp_Search.spec.ts
+```
+
+## Select and Frame Exercises
+
+The `tests/07_Select_Frames_Iframe` examples practice interacting with native
+and custom dropdowns. `234_Select_Frames.spec.ts` selects an option from a
+native dropdown, while `235_Advance_Select_1.spec.ts` selects values from
+custom language, framework, and experience dropdowns.
+
+`236_Advance_Select_2.spec.ts` exercises single-select, multi-select, and
+creatable custom dropdowns.
+
+Run the advanced dropdown exercises with:
+
+```bash
+npx playwright test tests/07_Select_Frames_Iframe/235_Advance_Select_1.spec.ts
+npx playwright test tests/07_Select_Frames_Iframe/236_Advance_Select_2.spec.ts
+```
+
 ## Prerequisites
 
 Before running the tests, make sure you have the following installed:
@@ -166,7 +202,14 @@ test first to create the file.
 
 `tests/Project_Practice/228_Practice_Bank_App.spec.ts` exercises a ParaBank
 workflow including registration, transferring funds, and viewing account
-details.
+details. `230_QA_Profile_Test.spec.ts` fills and submits the QA profile form,
+including its personal details and selection fields.
+
+Run the QA profile exercise with:
+
+```bash
+npx playwright test tests/Project_Practice/230_QA_Profile_Test.spec.ts
+```
 
 ## Project Structure
 
@@ -199,8 +242,18 @@ details.
 │   │   └── 226_Test_VWO.spec.ts
 │   ├── 04_Allure_Reporting/
 │   │   └── 227_LoginTest.spec.ts
+│   ├── 06_WebTables/
+│   │   ├── 231_Webtable_Basic.spec.ts
+│   │   ├── 232_Webtable_Dynamic.spec.ts
+│   │   └── 233_WebTable_Emp_Mgmt.spec.ts
+│   ├── 07_Select_Frames_Iframe/
+│   │   ├── 234_Select_Frames.spec.ts
+│   │   ├── 235_Advance_Select_1.spec.ts
+│   │   └── 236_Advance_Select_2.spec.ts
 │   └── Project_Practice/
-│       └── 228_Practice_Bank_App.spec.ts
+│       ├── 228_Practice_Bank_App.spec.ts
+│       ├── 230_QA_Profile_Test.spec.ts
+│       └── 234_WebTable_Emp_Search.spec.ts
 ├── CustomTTAReporter.ts
 ├── playwright.config.ts
 ├── package.json
