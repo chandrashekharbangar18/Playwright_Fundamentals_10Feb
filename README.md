@@ -106,21 +106,20 @@ Run the employee-search exercise with:
 npx playwright test tests/Project_Practice/234_WebTable_Emp_Search.spec.ts
 ```
 
-## Select and Frame Exercises
+## Select Exercises
 
-The `tests/07_Select_Frames_Iframe` examples practice interacting with native
-and custom dropdowns. `234_Select_Frames.spec.ts` selects an option from a
-native dropdown, while `235_Advance_Select_1.spec.ts` selects values from
-custom language, framework, and experience dropdowns.
+The `tests/07_Select` examples practice interacting with native and custom
+dropdowns. `234_Select_Frames.spec.ts` selects values from custom language,
+framework, and experience dropdowns. `235_Advance_Select_1.spec.ts` selects an
+option from a native dropdown. `236_Advance_Select_2.spec.ts` exercises
+single-select, multi-select, and creatable custom dropdowns.
 
-`236_Advance_Select_2.spec.ts` exercises single-select, multi-select, and
-creatable custom dropdowns.
-
-Run the advanced dropdown exercises with:
+Run the select exercises with:
 
 ```bash
-npx playwright test tests/07_Select_Frames_Iframe/235_Advance_Select_1.spec.ts
-npx playwright test tests/07_Select_Frames_Iframe/236_Advance_Select_2.spec.ts
+npx playwright test tests/07_Select/234_Select_Frames.spec.ts
+npx playwright test tests/07_Select/235_Advance_Select_1.spec.ts
+npx playwright test tests/07_Select/236_Advance_Select_2.spec.ts
 ```
 
 ## Frames and Iframes
@@ -258,7 +257,7 @@ npx playwright test tests/Project_Practice/230_QA_Profile_Test.spec.ts
 │   │   ├── 231_Webtable_Basic.spec.ts
 │   │   ├── 232_Webtable_Dynamic.spec.ts
 │   │   └── 233_WebTable_Emp_Mgmt.spec.ts
-│   ├── 07_Select_Frames_Iframe/
+│   ├── 07_Select/
 │   │   ├── 234_Select_Frames.spec.ts
 │   │   ├── 235_Advance_Select_1.spec.ts
 │   │   └── 236_Advance_Select_2.spec.ts
