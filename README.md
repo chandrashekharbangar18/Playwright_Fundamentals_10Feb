@@ -127,11 +127,14 @@ npx playwright test tests/07_Select/236_Advance_Select_2.spec.ts
 The `tests/08_Frames_IFrames` examples practice interacting with frames and
 iframes. `239_Iframe_Within_Iframe.spec.ts` traverses three nested iframes,
 fills a field at each level, and verifies text in the outer page.
+`240_Nested_Frames_Ex.spec.ts` also traverses three nested frames and fills a
+different field at each level.
 
-Run the nested-iframe exercise with:
+Run the nested-frame exercises with:
 
 ```bash
 npx playwright test tests/08_Frames_IFrames/239_Iframe_Within_Iframe.spec.ts
+npx playwright test tests/08_Frames_IFrames/240_Nested_Frames_Ex.spec.ts
 ```
 
 ## Hover, Drag-and-Drop, and Right-Click Exercises
@@ -284,7 +287,8 @@ npx playwright test tests/Project_Practice/230_QA_Profile_Test.spec.ts
 │   │   ├── 235_Advance_Select_1.spec.ts
 │   │   └── 236_Advance_Select_2.spec.ts
 │   ├── 08_Frames_IFrames/
-│   │   └── 239_Iframe_Within_Iframe.spec.ts
+│   │   ├── 239_Iframe_Within_Iframe.spec.ts
+│   │   └── 240_Nested_Frames_Ex.spec.ts
 │   └── Project_Practice/
 │       ├── 228_Practice_Bank_App.spec.ts
 │       ├── 230_QA_Profile_Test.spec.ts
