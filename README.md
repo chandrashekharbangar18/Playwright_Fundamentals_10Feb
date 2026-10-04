@@ -134,6 +134,28 @@ Run the nested-iframe exercise with:
 npx playwright test tests/08_Frames_IFrames/239_Iframe_Within_Iframe.spec.ts
 ```
 
+## Hover, Drag-and-Drop, and Right-Click Exercises
+
+The `tests/11_Hover_DragAndDrop` examples practice hover menus, drag-and-drop interactions, and context-menu/right-click behavior.
+
+`243_Spicejet_Hover_1.spec.ts` opens the SpiceJet website, hovers over **Add-ons**, clicks **FlyEarly**, and demonstrates a hover-driven navigation flow.
+
+`244_Hover_Practice_2.spec.ts` opens the custom hover-menu widget, triggers the menu, reads all submenu items, clicks one of the options, and verifies the hover output text contains the clicked state.
+
+`245_Drag_Drop_1.spec.ts` and `246_Drag_Drop_2.spec.ts` demonstrate drag-and-drop interactions using both the Heroku drag-and-drop page and a custom widget. The latter drags a card into the **In Progress** column and asserts the UI updates as expected.
+
+`247_RightClick.spec.ts` opens the context-menu widget, performs a right-click on the target area, and retrieves the menu option text values from the context menu.
+
+Run the hover, drag-and-drop, and right-click exercises directly with:
+
+```bash
+npx playwright test tests/11_Hover_DragAndDrop/243_Spicejet_Hover_1.spec.ts
+npx playwright test tests/11_Hover_DragAndDrop/244_Hover_Practice_2.spec.ts
+npx playwright test tests/11_Hover_DragAndDrop/245_Drag_Drop_1.spec.ts
+npx playwright test tests/11_Hover_DragAndDrop/246_Drag_Drop_2.spec.ts
+npx playwright test tests/11_Hover_DragAndDrop/247_RightClick.spec.ts
+```
+
 ## Prerequisites
 
 Before running the tests, make sure you have the following installed:
