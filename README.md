@@ -137,6 +137,30 @@ npx playwright test tests/08_Frames_IFrames/239_Iframe_Within_Iframe.spec.ts
 npx playwright test tests/08_Frames_IFrames/240_Nested_Frames_Ex.spec.ts
 ```
 
+## Keyboard Actions
+
+`tests/09_Keyboard_Actions/241_Keyboard.spec.ts` practices sending keyboard
+input with `page.keyboard.press()` on keycode.info. It presses `A`, `ArrowLeft`,
+and `Shift+0`, taking a screenshot after each key action.
+
+Run the keyboard exercise with:
+
+```bash
+npx playwright test tests/09_Keyboard_Actions/241_Keyboard.spec.ts
+```
+
+## JavaScript Dialogs
+
+`tests/10_JS_Alerts/242_Alerts.spec.ts` handles JavaScript alert, confirm, and
+prompt dialogs on the browser's JavaScript alerts demo page. It verifies dialog
+types and messages, accepts the dialogs, and checks the resulting page text.
+
+Run the dialog exercises with:
+
+```bash
+npx playwright test tests/10_JS_Alerts/242_Alerts.spec.ts
+```
+
 ## Hover, Drag-and-Drop, and Right-Click Exercises
 
 The `tests/11_Hover_DragAndDrop` examples practice hover menus, drag-and-drop interactions, and context-menu/right-click behavior.
@@ -289,6 +313,16 @@ npx playwright test tests/Project_Practice/230_QA_Profile_Test.spec.ts
 │   ├── 08_Frames_IFrames/
 │   │   ├── 239_Iframe_Within_Iframe.spec.ts
 │   │   └── 240_Nested_Frames_Ex.spec.ts
+│   ├── 09_Keyboard_Actions/
+│   │   └── 241_Keyboard.spec.ts
+│   ├── 10_JS_Alerts/
+│   │   └── 242_Alerts.spec.ts
+│   ├── 11_Hover_DragAndDrop/
+│   │   ├── 243_Spicejet_Hover_1.spec.ts
+│   │   ├── 244_Hover_Practice_2.spec.ts
+│   │   ├── 245_Drag_Drop_1.spec.ts
+│   │   ├── 246_Drag_Drop_2.spec.ts
+│   │   └── 247_RightClick.spec.ts
 │   └── Project_Practice/
 │       ├── 228_Practice_Bank_App.spec.ts
 │       ├── 230_QA_Profile_Test.spec.ts
