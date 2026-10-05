@@ -183,6 +183,18 @@ npx playwright test tests/11_Hover_DragAndDrop/246_Drag_Drop_2.spec.ts
 npx playwright test tests/11_Hover_DragAndDrop/247_RightClick.spec.ts
 ```
 
+## SVG Exercises
+
+`tests/12_Handle_SVG/251_Advance_SVG.spec.ts` opens the India map, enumerates
+the SVG state paths, clicks Maharashtra, and saves a full-page screenshot as
+`MH_State.png` in the project root.
+
+Run the advanced SVG exercise with:
+
+```bash
+npx playwright test tests/12_Handle_SVG/251_Advance_SVG.spec.ts
+```
+
 ## Prerequisites
 
 Before running the tests, make sure you have the following installed:
