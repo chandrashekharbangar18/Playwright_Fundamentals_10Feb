@@ -195,6 +195,19 @@ Run the advanced SVG exercise with:
 npx playwright test tests/12_Handle_SVG/251_Advance_SVG.spec.ts
 ```
 
+## Shadow DOM
+
+`tests/13_Shadow_DOM/253_Shadow_Dom_Ex2.spec.ts` practices locating and filling
+fields inside a Shadow DOM card on the SelectorsHub XPath practice page. It
+fills the email and pizza fields through a card-scoped locator, then uses
+keyboard navigation to enter the remaining values.
+
+Run the Shadow DOM exercise with:
+
+```bash
+npx playwright test tests/13_Shadow_DOM/253_Shadow_Dom_Ex2.spec.ts
+```
+
 ## Prerequisites
 
 Before running the tests, make sure you have the following installed:
