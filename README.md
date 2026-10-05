@@ -197,14 +197,22 @@ npx playwright test tests/12_Handle_SVG/251_Advance_SVG.spec.ts
 
 ## Shadow DOM
 
+`tests/13_Shadow_DOM/252_Shadow_Dom_Ex1.spec.ts` practices interacting with
+shadow-root content on the Testing Academy widget page. It fills and submits an
+account card, checks the status contains the submitted email, increments a
+nested counter twice and verifies its value, then fills and submits a card
+inside a nested shadow host.
+
 `tests/13_Shadow_DOM/253_Shadow_Dom_Ex2.spec.ts` practices locating and filling
 fields inside a Shadow DOM card on the SelectorsHub XPath practice page. It
-fills the email and pizza fields through a card-scoped locator, then uses
-keyboard navigation to enter the remaining values.
+fills the email field with `test@abc` and the pizza field with `Paneer Pizza`
+through a card-scoped locator, then uses Tab navigation to enter `Playwright`
+and `Password123` in the remaining fields.
 
-Run the Shadow DOM exercise with:
+Run the Shadow DOM exercises with:
 
 ```bash
+npx playwright test tests/13_Shadow_DOM/252_Shadow_Dom_Ex1.spec.ts
 npx playwright test tests/13_Shadow_DOM/253_Shadow_Dom_Ex2.spec.ts
 ```
 
@@ -348,6 +356,11 @@ npx playwright test tests/Project_Practice/230_QA_Profile_Test.spec.ts
 │   │   ├── 245_Drag_Drop_1.spec.ts
 │   │   ├── 246_Drag_Drop_2.spec.ts
 │   │   └── 247_RightClick.spec.ts
+│   ├── 12_Handle_SVG/
+│   │   └── 251_Advance_SVG.spec.ts
+│   ├── 13_Shadow_DOM/
+│   │   ├── 252_Shadow_Dom_Ex1.spec.ts
+│   │   └── 253_Shadow_Dom_Ex2.spec.ts
 │   └── Project_Practice/
 │       ├── 228_Practice_Bank_App.spec.ts
 │       ├── 230_QA_Profile_Test.spec.ts
