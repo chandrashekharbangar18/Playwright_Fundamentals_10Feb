@@ -2,7 +2,7 @@ import { chromium, Browser, BrowserContext, Page } from 'playwright';
 
 async function run() {
   const browser: Browser = await chromium.launch({
-    headless: process.env.CI !== 'true',
+    headless: true,
   });
 
   console.log('Browser launched');
@@ -23,7 +23,10 @@ async function run() {
   }
 }
 
-run();
+run().catch((error) => {
+  console.error('Playwright test failed:', error);
+  process.exit(1);
+});
 
 // Browser launched
 // Context created
