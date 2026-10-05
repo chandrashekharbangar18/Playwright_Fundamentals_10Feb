@@ -38,7 +38,7 @@ export default defineConfig({
     headless: false,
 
     /* Full HD (1920x1080) maximized viewport */
-    viewport: { width: 1920, height: 1080 },
+    viewport: { width: 1440, height: 900 },
   },
 
   /* Configure projects for major browsers */
@@ -48,7 +48,7 @@ export default defineConfig({
       use: {
         ...devices['Desktop Chrome'],
         /* Override device viewport with Full HD */
-        viewport: { width: 1920, height: 1080 },
+        viewport: { width: 1440, height: 900 },
       },
     },
 

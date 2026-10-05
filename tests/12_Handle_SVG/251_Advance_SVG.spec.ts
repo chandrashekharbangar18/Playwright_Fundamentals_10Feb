@@ -23,14 +23,11 @@
             if(stateName === "sm_state sm_state_INMH")
             {
                 await allStates.nth(i).click();
-                await page.waitForTimeout(5000);
+                await page.waitForTimeout(2000);
                 await page.screenshot({ path: 'MH_State.png', fullPage: true });
                 break;
             }
         }
-
-
-
-        await page.waitForTimeout(5000);
+        await page.waitForTimeout(2000);
 
     });
