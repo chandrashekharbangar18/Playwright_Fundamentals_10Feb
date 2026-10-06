@@ -216,6 +216,26 @@ npx playwright test tests/13_Shadow_DOM/252_Shadow_Dom_Ex1.spec.ts
 npx playwright test tests/13_Shadow_DOM/253_Shadow_Dom_Ex2.spec.ts
 ```
 
+## File Upload
+
+`tests/14_File_Upload/254_FIleUpload_1.spec.ts` and
+`tests/14_File_Upload/255_FIleUpload_2.spec.ts` demonstrate uploading a single
+file on The Internet upload page, the Testing Academy upload widget, and the
+AwesomeQA practice form.
+
+`tests/14_File_Upload/256_Multiple_FileUpload_1.spec.ts` practices selecting
+multiple files for upload using the PatternFly multiple-file upload widget. The
+test expects `0.png` and `A.png` to be available in the project root. The
+single-file upload examples use `tests/14_File_Upload/testData.txt`.
+
+Run the file-upload exercises with:
+
+```bash
+npx playwright test tests/14_File_Upload/254_FIleUpload_1.spec.ts
+npx playwright test tests/14_File_Upload/255_FIleUpload_2.spec.ts
+npx playwright test tests/14_File_Upload/256_Multiple_FileUpload_1.spec.ts
+```
+
 ## Prerequisites
 
 Before running the tests, make sure you have the following installed:
@@ -361,6 +381,11 @@ npx playwright test tests/Project_Practice/230_QA_Profile_Test.spec.ts
 │   ├── 13_Shadow_DOM/
 │   │   ├── 252_Shadow_Dom_Ex1.spec.ts
 │   │   └── 253_Shadow_Dom_Ex2.spec.ts
+│   ├── 14_File_Upload/
+│   │   ├── 254_FIleUpload_1.spec.ts
+│   │   ├── 255_FIleUpload_2.spec.ts
+│   │   ├── 256_Multiple_FileUpload_1.spec.ts
+│   │   └── testData.txt
 │   └── Project_Practice/
 │       ├── 228_Practice_Bank_App.spec.ts
 │       ├── 230_QA_Profile_Test.spec.ts
