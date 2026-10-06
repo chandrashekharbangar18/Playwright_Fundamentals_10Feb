@@ -236,6 +236,30 @@ npx playwright test tests/14_File_Upload/255_FIleUpload_2.spec.ts
 npx playwright test tests/14_File_Upload/256_Multiple_FileUpload_1.spec.ts
 ```
 
+## File Download
+
+`tests/15_File_Download/257_FIleDownload_1.spec.ts` captures a static file
+download from the Testing Academy upload/download widget and saves it under
+`out/` using the suggested filename.
+
+Run the file-download exercise with:
+
+```bash
+npx playwright test tests/15_File_Download/257_FIleDownload_1.spec.ts
+```
+
+## Scrolling to Elements
+
+`tests/16_Scroll_To_Elements/258_Scroll_To_Elements.spec.ts` scrolls to and
+clicks a deep-page anchor, then scrolls the lazy-loaded list and verifies that
+additional items are appended.
+
+Run the scroll exercise with:
+
+```bash
+npx playwright test tests/16_Scroll_To_Elements/258_Scroll_To_Elements.spec.ts
+```
+
 ## Prerequisites
 
 Before running the tests, make sure you have the following installed:
@@ -386,6 +410,10 @@ npx playwright test tests/Project_Practice/230_QA_Profile_Test.spec.ts
 │   │   ├── 255_FIleUpload_2.spec.ts
 │   │   ├── 256_Multiple_FileUpload_1.spec.ts
 │   │   └── testData.txt
+│   ├── 15_File_Download/
+│   │   └── 257_FIleDownload_1.spec.ts
+│   ├── 16_Scroll_To_Elements/
+│   │   └── 258_Scroll_To_Elements.spec.ts
 │   └── Project_Practice/
 │       ├── 228_Practice_Bank_App.spec.ts
 │       ├── 230_QA_Profile_Test.spec.ts
