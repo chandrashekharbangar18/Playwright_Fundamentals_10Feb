@@ -291,6 +291,24 @@ npx playwright test tests/18_Test_Hooks/263_Test_Before_After.spec.ts
 npx playwright test tests/18_Test_Hooks/264_Group_Describe.spec.ts
 ```
 
+## Data-Driven Testing
+
+The `tests/19_Data_Driven_Testing` examples create login tests from in-memory
+data and external CSV files. `265_DDT_Simple.spec.ts` uses an array of test
+cases, while `266_DDT_CSV.spec.ts` and `267_DDT_CSV.spec.ts` read cases from
+`login-data.csv`; the latter also demonstrates `beforeEach` and `afterEach`
+hooks. `268_DDT_JSON.spec.ts` generates cases from `registration-data.json`.
+The folder also includes a YAML data file and CSV/YAML reader utilities.
+
+Run the data-driven tests with:
+
+```bash
+npx playwright test tests/19_Data_Driven_Testing/265_DDT_Simple.spec.ts
+npx playwright test tests/19_Data_Driven_Testing/266_DDT_CSV.spec.ts
+npx playwright test tests/19_Data_Driven_Testing/267_DDT_CSV.spec.ts
+npx playwright test tests/19_Data_Driven_Testing/268_DDT_JSON.spec.ts
+```
+
 ## Prerequisites
 
 Before running the tests, make sure you have the following installed:
@@ -455,6 +473,16 @@ npx playwright test tests/Project_Practice/230_QA_Profile_Test.spec.ts
 │   │   ├── 262_Grouped_Test.spec.ts
 │   │   ├── 263_Test_Before_After.spec.ts
 │   │   └── 264_Group_Describe.spec.ts
+│   ├── 19_Data_Driven_Testing/
+│   │   ├── 265_DDT_Simple.spec.ts
+│   │   ├── 266_DDT_CSV.spec.ts
+│   │   ├── 267_DDT_CSV.spec.ts
+│   │   ├── 268_DDT_JSON.spec.ts
+│   │   ├── csvReader.ts
+│   │   ├── login-data.csv
+│   │   ├── login-data.yaml
+│   │   ├── registration-data.json
+│   │   └── yamlReader.ts
 │   └── Project_Practice/
 │       ├── 228_Practice_Bank_App.spec.ts
 │       ├── 230_QA_Profile_Test.spec.ts
