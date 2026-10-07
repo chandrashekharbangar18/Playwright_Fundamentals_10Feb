@@ -260,6 +260,37 @@ Run the scroll exercise with:
 npx playwright test tests/16_Scroll_To_Elements/258_Scroll_To_Elements.spec.ts
 ```
 
+## Assertions
+
+The `tests/17_Assertions` examples cover value and locator assertions,
+soft assertions, negation, and URL/title/state checks. `259_Expect.spec.ts`
+demonstrates these assertion styles, while `260_URL_Assertions.spec.ts` covers
+page URL/title and element state assertions. The folder also contains an
+`expect` assertion cheatsheet and additional examples.
+
+Run the assertion exercises with:
+
+```bash
+npx playwright test tests/17_Assertions/259_Expect.spec.ts
+npx playwright test tests/17_Assertions/260_URL_Assertions.spec.ts
+```
+
+## Test Hooks and Grouping
+
+The `tests/18_Test_Hooks` examples cover `test.step()`, test modifiers such as
+`skip`, `slow`, `fixme`, and `fail`, `beforeAll`/`beforeEach`/
+`afterEach`/`afterAll` hooks, and test grouping. `264_Group_Describe.spec.ts`
+demonstrates a serial group that runs in order alongside independent tests.
+
+Run the test-hook exercises with:
+
+```bash
+npx playwright test tests/18_Test_Hooks/261_Test_Hooks.spec.ts
+npx playwright test tests/18_Test_Hooks/262_Grouped_Test.spec.ts
+npx playwright test tests/18_Test_Hooks/263_Test_Before_After.spec.ts
+npx playwright test tests/18_Test_Hooks/264_Group_Describe.spec.ts
+```
+
 ## Prerequisites
 
 Before running the tests, make sure you have the following installed:
@@ -414,6 +445,16 @@ npx playwright test tests/Project_Practice/230_QA_Profile_Test.spec.ts
 │   │   └── 257_FIleDownload_1.spec.ts
 │   ├── 16_Scroll_To_Elements/
 │   │   └── 258_Scroll_To_Elements.spec.ts
+│   ├── 17_Assertions/
+│   │   ├── 259_Expect.spec.ts
+│   │   ├── 260_URL_Assertions.spec.ts
+│   │   ├── Expect_Assertions_Cheatsheet.md
+│   │   └── More_Expect_Examples.md
+│   ├── 18_Test_Hooks/
+│   │   ├── 261_Test_Hooks.spec.ts
+│   │   ├── 262_Grouped_Test.spec.ts
+│   │   ├── 263_Test_Before_After.spec.ts
+│   │   └── 264_Group_Describe.spec.ts
 │   └── Project_Practice/
 │       ├── 228_Practice_Bank_App.spec.ts
 │       ├── 230_QA_Profile_Test.spec.ts
