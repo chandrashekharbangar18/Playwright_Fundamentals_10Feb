@@ -309,6 +309,21 @@ npx playwright test tests/19_Data_Driven_Testing/267_DDT_CSV.spec.ts
 npx playwright test tests/19_Data_Driven_Testing/268_DDT_JSON.spec.ts
 ```
 
+The FakerJS exercises generate user data for negative login checks and profile
+registration. `269_FakerJS_1.spec.ts` introduces generated values,
+`270_FakerJS_2.spec.ts` and `271_FakerJS_3.spec.ts` fill a profile form with
+generated user details, and `272_DDT_FakerJS.spec.ts` creates five registration
+tests with different email domains.
+
+Run the FakerJS exercises with:
+
+```bash
+npx playwright test tests/19_Data_Driven_Testing/269_FakerJS_1.spec.ts
+npx playwright test tests/19_Data_Driven_Testing/270_FakerJS_2.spec.ts
+npx playwright test tests/19_Data_Driven_Testing/271_FakerJS_3.spec.ts
+npx playwright test tests/19_Data_Driven_Testing/272_DDT_FakerJS.spec.ts
+```
+
 ## Prerequisites
 
 Before running the tests, make sure you have the following installed:
@@ -482,7 +497,11 @@ npx playwright test tests/Project_Practice/230_QA_Profile_Test.spec.ts
 │   │   ├── login-data.csv
 │   │   ├── login-data.yaml
 │   │   ├── registration-data.json
-│   │   └── yamlReader.ts
+│   │   ├── yamlReader.ts
+│   │   ├── 269_FakerJS_1.spec.ts
+│   │   ├── 270_FakerJS_2.spec.ts
+│   │   ├── 271_FakerJS_3.spec.ts
+│   │   └── 272_DDT_FakerJS.spec.ts
 │   └── Project_Practice/
 │       ├── 228_Practice_Bank_App.spec.ts
 │       ├── 230_QA_Profile_Test.spec.ts
