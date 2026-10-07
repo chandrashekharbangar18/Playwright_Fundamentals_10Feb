@@ -232,39 +232,32 @@ class CustomTTAReporter implements Reporter {
 
         for (const attachment of result.attachments) {
             if (attachment.contentType === 'image/png') {
-                const screenshotName = `screenshot_${this.testCounter}_${screenshots.length + 1}.png`;
-                const destPath = path.join('tta-report', 'screenshots', screenshotName);
-                const destDir = path.dirname(destPath);
-                if (!fs.existsSync(destDir)) {
-                    fs.mkdirSync(destDir, { recursive: true });
-                }
                 try {
-                    if (attachment.path) {
-                        fs.copyFileSync(attachment.path, destPath);
-                    } else if (attachment.body) {
-                        fs.writeFileSync(destPath, attachment.body);
+                    const screenshot = attachment.body ??
+                        (attachment.path ? fs.readFileSync(attachment.path) : undefined);
+                    if (!screenshot) {
+                        console.warn(`Screenshot attachment has no data: ${attachment.name}`);
+                        continue;
                     }
-                    screenshots.push({ name: attachment.name || `Screenshot ${screenshots.length + 1}`, path: `screenshots/${screenshotName}` });
+                    const screenshotData = `data:image/png;base64,${screenshot.toString('base64')}`;
+                    screenshots.push({
+                        name: attachment.name || `Screenshot ${screenshots.length + 1}`,
+                        path: screenshotData,
+                    });
                     if (attachment.name) {
-                        stepScreenshots.set(attachment.name, `screenshots/${screenshotName}`);
+                        stepScreenshots.set(attachment.name, screenshotData);
                     }
                 } catch {
-                    console.warn(`Failed to save screenshot: ${attachment.name}`);
+                    console.warn(`Failed to embed screenshot: ${attachment.name}`);
                 }
             }
 
             if (attachment.contentType === 'video/webm' && attachment.path) {
-                const videoName = `video_${this.testCounter}.webm`;
-                const destPath = path.join('tta-report', 'videos', videoName);
-                const destDir = path.dirname(destPath);
-                if (!fs.existsSync(destDir)) {
-                    fs.mkdirSync(destDir, { recursive: true });
-                }
                 try {
-                    fs.copyFileSync(attachment.path, destPath);
-                    videoPath = `videos/${videoName}`;
+                    const video = fs.readFileSync(attachment.path);
+                    videoPath = `data:video/webm;base64,${video.toString('base64')}`;
                 } catch {
-                    console.warn(`Failed to copy video: ${attachment.path}`);
+                    console.warn(`Failed to embed video: ${attachment.path}`);
                 }
             }
 
