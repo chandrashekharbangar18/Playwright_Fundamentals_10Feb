@@ -7,3 +7,4 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 /user-session.json
+/TTA_Cart_Proj/tests/.env

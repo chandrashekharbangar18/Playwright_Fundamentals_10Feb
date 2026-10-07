@@ -324,6 +324,34 @@ npx playwright test tests/19_Data_Driven_Testing/271_FakerJS_3.spec.ts
 npx playwright test tests/19_Data_Driven_Testing/272_DDT_FakerJS.spec.ts
 ```
 
+## TTA Cart End-to-End Test
+
+`TTA_Cart_Proj/tests/ttacartE2E.spec.ts` demonstrates a page-object-based
+shopping workflow against the TTA Cart application. It signs in, adds products
+to the cart, proceeds through checkout, and verifies the checkout step.
+
+The test loads `TTA_Cart_Proj/tests/.env` and requires `TTACART_USERNAME` and
+`TTACART_PASSWORD`. Provide your own credentials in that file; do not commit
+credentials to source control. For example:
+
+```dotenv
+TTACART_USERNAME=your-username
+TTACART_PASSWORD=your-password
+```
+
+Run the test from the repository root with:
+
+```bash
+npx playwright test TTA_Cart_Proj/tests/ttacartE2E.spec.ts
+```
+
+The run generates the Playwright HTML report at `playwright-report/index.html`
+and a custom TTA report under `tta-report/`. Open the Playwright report with:
+
+```bash
+npx playwright show-report
+```
+
 ## Prerequisites
 
 Before running the tests, make sure you have the following installed:
@@ -506,6 +534,13 @@ npx playwright test tests/Project_Practice/230_QA_Profile_Test.spec.ts
 │       ├── 228_Practice_Bank_App.spec.ts
 │       ├── 230_QA_Profile_Test.spec.ts
 │       └── 234_WebTable_Emp_Search.spec.ts
+├── TTA_Cart_Proj/
+│   ├── pages/
+│   │   ├── TTA_Cart_LoginPage.ts
+│   │   ├── TTACartInventoryPage.ts
+│   │   └── TTACartCheckoutPage.ts
+│   └── tests/
+│       └── ttacartE2E.spec.ts
 ├── CustomTTAReporter.ts
 ├── playwright.config.ts
 ├── package.json
