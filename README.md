@@ -324,6 +324,18 @@ npx playwright test tests/19_Data_Driven_Testing/271_FakerJS_3.spec.ts
 npx playwright test tests/19_Data_Driven_Testing/272_DDT_FakerJS.spec.ts
 ```
 
+## Date Picker
+
+`tests/21_Date_Picker/276_TodaysDate.spec.ts` verifies the date picker's
+**Assert today's date** button by comparing its displayed result with the
+current date.
+
+Run the date-picker exercise with:
+
+```bash
+npx playwright test tests/21_Date_Picker/276_TodaysDate.spec.ts
+```
+
 ## TTA Cart End-to-End Test
 
 `TTA_Cart_Proj/tests/ttacartE2E.spec.ts` demonstrates a page-object-based
@@ -530,6 +542,8 @@ npx playwright test tests/Project_Practice/230_QA_Profile_Test.spec.ts
 │   │   ├── 270_FakerJS_2.spec.ts
 │   │   ├── 271_FakerJS_3.spec.ts
 │   │   └── 272_DDT_FakerJS.spec.ts
+│   ├── 21_Date_Picker/
+│   │   └── 276_TodaysDate.spec.ts
 │   └── Project_Practice/
 │       ├── 228_Practice_Bank_App.spec.ts
 │       ├── 230_QA_Profile_Test.spec.ts
