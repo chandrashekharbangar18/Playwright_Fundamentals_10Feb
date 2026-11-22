@@ -326,13 +326,16 @@ npx playwright test tests/19_Data_Driven_Testing/272_DDT_FakerJS.spec.ts
 
 ## Date Picker
 
-`tests/21_Date_Picker/276_TodaysDate.spec.ts` verifies the date picker's
-**Assert today's date** button by comparing its displayed result with the
-current date.
+The `tests/21_Date_Picker` examples cover selecting a date and verifying the
+current date. `275_Date_Picker.spec.ts` selects a value through a native date
+input and picks December 25, 2026 from a custom calendar.
+`276_TodaysDate.spec.ts` verifies the **Assert today's date** button by
+comparing its displayed result with the current date.
 
-Run the date-picker exercise with:
+Run the date-picker exercises with:
 
 ```bash
+npx playwright test tests/21_Date_Picker/275_Date_Picker.spec.ts
 npx playwright test tests/21_Date_Picker/276_TodaysDate.spec.ts
 ```
 
@@ -543,6 +546,7 @@ npx playwright test tests/Project_Practice/230_QA_Profile_Test.spec.ts
 │   │   ├── 271_FakerJS_3.spec.ts
 │   │   └── 272_DDT_FakerJS.spec.ts
 │   ├── 21_Date_Picker/
+│   │   ├── 275_Date_Picker.spec.ts
 │   │   └── 276_TodaysDate.spec.ts
 │   └── Project_Practice/
 │       ├── 228_Practice_Bank_App.spec.ts
